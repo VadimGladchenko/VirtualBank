@@ -246,11 +246,6 @@ public class CardViewActivity extends AppCompatActivity
     }
 
     @Override
-    public void completeHistoryCard() {
-        historyDialog.dismiss();
-    }
-
-    @Override
     public void showToast(String text) {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
