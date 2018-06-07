@@ -32,6 +32,7 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder> 
         cardList.addAll(collection);
         notifyDataSetChanged();
     }
+
     public void addItem(Card card) {
         cardList.add(card);
         notifyDataSetChanged();
@@ -45,10 +46,8 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //View itemView = LayoutInflater.from(parent.getContext())
-        //        .inflate(orientationLand ? R.layout.item_calender_session_land : R.layout.item_calender_session_port, null);
-
         boolean portOrientation = true;
+
         if(parent.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             portOrientation = false;
         }
@@ -56,11 +55,6 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder> 
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(portOrientation ? R.layout.card_item : R.layout.card_item_land, parent,false);
         return new ViewHolder(view, itemClickListener);
-
-
-//        View view = LayoutInflater.from(parent.getContext())
-//                .inflate(R.layout.card_item, parent,false);
-//        return new ViewHolder(view, itemClickListener);
     }
 
     @Override
@@ -83,7 +77,6 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder> 
 
         @BindView(R.id.tv_item_card_id)
         TextView tvCardId;
-
 
         private ItemClickListener itemClickListener;
 

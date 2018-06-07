@@ -19,7 +19,6 @@ public class ClientsModel implements IClientsModel {
     private DbHelper dbHelper;
 
     public ClientsModel() {
-
     }
 
     public boolean addUser(User user){
@@ -31,6 +30,7 @@ public class ClientsModel implements IClientsModel {
 
         db.insert(UsersTable.TABLE, null, values);
         db.close();
+
         return true;
     }
 
@@ -58,10 +58,7 @@ public class ClientsModel implements IClientsModel {
         cursor.close();
         db.close();
 
-        if(cursorCount > 0){
-            return true;
-        }
-        return false;
+        return cursorCount > 0;
     }
 
     public User getUser(String email, String password) {
@@ -83,8 +80,6 @@ public class ClientsModel implements IClientsModel {
                 null);
         int cursorCount = cursor.getCount();
 
-        //showDataBase();
-
         if(cursorCount > 0){
             cursor.moveToNext();
 
@@ -99,6 +94,7 @@ public class ClientsModel implements IClientsModel {
         }
         cursor.close();
         db.close();
+
         return null;
     }
 
@@ -113,6 +109,7 @@ public class ClientsModel implements IClientsModel {
 
         db.insert(CardsTable.TABLE, null, values);
         db.close();
+
         return true;
     }
 
@@ -127,6 +124,7 @@ public class ClientsModel implements IClientsModel {
 
         db.insert(HistoryTable.TABLE, null, values);
         db.close();
+
         return true;
     }
 
@@ -162,6 +160,7 @@ public class ClientsModel implements IClientsModel {
         }
         cursor.close();
         db.close();
+
         return transactionList;
     }
 
@@ -201,6 +200,7 @@ public class ClientsModel implements IClientsModel {
         }
         cursor.close();
         db.close();
+
         return cardsList;
     }
 
@@ -237,6 +237,7 @@ public class ClientsModel implements IClientsModel {
 
         cursor.close();
         db.close();
+
         return card;
     }
 
@@ -272,11 +273,13 @@ public class ClientsModel implements IClientsModel {
         } else {
             cursor.close();
             db.close();
+
             return null;
         }
 
         cursor.close();
         db.close();
+
         return card;
     }
 
@@ -293,25 +296,6 @@ public class ClientsModel implements IClientsModel {
 
         db.close();
 
-        if(updCount == 1) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-
-    /////////
-    void showDataBase() {
-        Cursor cursor = dbHelper.getReadableDatabase().query(UsersTable.TABLE, null, null, null, null, null, null);
-        while (cursor.moveToNext()) {
-
-            int a = cursor.getInt(cursor.getColumnIndex(UsersTable.COLUMN.ID));
-            String b = cursor.getString(cursor.getColumnIndex(UsersTable.COLUMN.EMAIL));
-            String c = "1655416";
-            String d = "lo,";
-
-        }
+        return updCount == 1;
     }
 }

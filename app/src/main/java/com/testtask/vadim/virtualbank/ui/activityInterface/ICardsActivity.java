@@ -5,6 +5,7 @@ import com.testtask.vadim.virtualbank.pojo.Card;
 import java.util.List;
 
 public interface ICardsActivity {
+
     void openCardDetails(int cardId);
 
     void displayCards(List<Card> carsList);

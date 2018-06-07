@@ -24,11 +24,4 @@ public class LinearLayoutSquare extends LinearLayout {
         heightMeasureSpec = widthMeasureSpec;
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
-
-    private boolean isPortOrientation(){
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            return false;
-        }
-        return true;
-    }
 }

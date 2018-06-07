@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface IClientsModel {
+
     void attachDbHelper(DbHelper dbHelper);
 
     boolean isEmailExist(String email);
+
     boolean addUser(User user);
 
     User getUser(String email, String password);
@@ -29,5 +31,4 @@ public interface IClientsModel {
     boolean addTransaction(int cardId, Transaction transaction);
 
     List<Transaction> getTransactions(int cardId);
-
 }

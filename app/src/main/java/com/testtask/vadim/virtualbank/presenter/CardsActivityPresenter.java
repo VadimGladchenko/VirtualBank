@@ -82,8 +82,6 @@ public class CardsActivityPresenter implements ItemClickListener{
         return model.addCard(card, userId);
     }
 
-
-
     public void detachView() {
         activity = null;
     }

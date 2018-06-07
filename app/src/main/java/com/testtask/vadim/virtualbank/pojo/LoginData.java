@@ -1,5 +1,7 @@
 package com.testtask.vadim.virtualbank.pojo;
 
+import java.util.Objects;
+
 public class LoginData {
     private String email;
     private String password;
@@ -26,5 +28,20 @@ public class LoginData {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof LoginData)) return false;
+        LoginData loginData = (LoginData) o;
+        return Objects.equals(email, loginData.email) &&
+                Objects.equals(password, loginData.password);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(email, password);
     }
 }
