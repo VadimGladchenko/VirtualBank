@@ -65,7 +65,7 @@ public class CardViewActivity extends AppCompatActivity
         ButterKnife.bind(this);
         presenter = new CardViewActivityPresenter(this, cardId);
 
-        ////
+        //// Need to replace by Dagger
         DbHelper dbHelper = new DbHelper(this);
         presenter.attachDbHelper(dbHelper);
         ////

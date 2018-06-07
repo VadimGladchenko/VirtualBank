@@ -2,6 +2,7 @@ package com.testtask.vadim.virtualbank.ui.fragmentDialog;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
@@ -65,7 +66,6 @@ public class ReplenishCardDialog extends DialogFragment implements View.OnClickL
                         etPin.getText().toString());
                 break;
             case R.id.btn_replenish_card_cancel:
-                clearFields();
                 dismiss();
                 break;
         }
@@ -80,6 +80,12 @@ public class ReplenishCardDialog extends DialogFragment implements View.OnClickL
             throw new ClassCastException(activity.toString()
                     + " must implement NoticeDialogListener");
         }
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        clearFields();
     }
 
     public void setAmountErrorReplenish(String message) {

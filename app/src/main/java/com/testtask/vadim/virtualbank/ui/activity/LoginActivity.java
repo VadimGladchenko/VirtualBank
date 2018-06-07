@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginActivity, 
         ButterKnife.bind(this);
         presenter = new LoginActivityPresenter(this);
 
-        ////
+        //// Need to replace by Dagger
         DbHelper dbHelper = new DbHelper(this);
         presenter.attachDbHelper(dbHelper);
         ////

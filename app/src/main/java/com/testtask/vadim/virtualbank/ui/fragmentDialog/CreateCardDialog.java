@@ -2,6 +2,7 @@ package com.testtask.vadim.virtualbank.ui.fragmentDialog;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
@@ -64,7 +65,6 @@ public class CreateCardDialog extends DialogFragment implements View.OnClickList
                         etPin.getText().toString());
                 break;
             case R.id.btn_create_card_cancel:
-                clearFields();
                 dismiss();
                 break;
         }
@@ -79,6 +79,12 @@ public class CreateCardDialog extends DialogFragment implements View.OnClickList
             throw new ClassCastException(activity.toString()
                     + " must implement NoticeDialogListener");
         }
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        clearFields();
     }
 
     private void clearFields() {

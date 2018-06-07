@@ -2,6 +2,7 @@ package com.testtask.vadim.virtualbank.ui.fragmentDialog;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.view.LayoutInflater;
@@ -75,10 +76,15 @@ public class WithdrawCardDialog extends DialogFragment implements View.OnClickLi
                         etPin.getText().toString());
                 break;
             case R.id.btn_withdraw_card_cancel:
-                clearFields();
                 dismiss();
                 break;
         }
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        clearFields();
     }
 
     public void setAmountErrorReplenish(String message) {

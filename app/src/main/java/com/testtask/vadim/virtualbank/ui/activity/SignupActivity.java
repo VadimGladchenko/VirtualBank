@@ -65,7 +65,7 @@ public class SignupActivity extends AppCompatActivity implements ISignupActivity
         initListeners();
         presenter = new SignupActivityPresenter(this);
 
-        ////
+        //// Need to replace by Dagger
         DbHelper dbHelper = new DbHelper(this);
         presenter.attachDbHelper(dbHelper);
         ////

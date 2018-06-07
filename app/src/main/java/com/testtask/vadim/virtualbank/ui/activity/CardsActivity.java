@@ -1,6 +1,7 @@
 package com.testtask.vadim.virtualbank.ui.activity;
 
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.testtask.vadim.virtualbank.R;
@@ -56,7 +58,7 @@ public class CardsActivity extends AppCompatActivity implements ICardsActivity, 
         initRecycleView();
         initListeners();
 
-        ////
+        //// Need to replace by Dagger
         DbHelper dbHelper = new DbHelper(this);
         presenter.attachDbHelper(dbHelper);
         ////
