@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryLight">#0d47a1</color>
+    <color name="colorPrimary">#032f70</color>
+    <color name="colorPrimaryDark">#FF052465</color>
+    <color name="colorAccent">#b71c1c</color>
+
+    <color name="background_gradient_dark">#FF052465</color>
+    <color name="background_gradient_light">#01579b</color>
+
+    <color name="black">#000000</color>
+    <color name="red">#b71c1c</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_dove_light_0">#ececec</color>
+    <color name="gray_dove_light_1">#d6d6d6</color>
+    <color name="gray_dove_light_2">#bdbdbd</color>
+    <color name="gray_dove_light_3">#9e9e9e</color>
+    <color name="gray_dove">#666666</color>
+</resources>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/create_card_name_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:errorTextAppearance="@style/DialogTextInputError"
+            android:theme="@style/DialogTextInputLabel">
+
+            <EditText
+                android:id="@+id/et_create_card_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="14"
+                android:hint="@string/card_name"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/gray_dove" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/create_card_pin_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:errorTextAppearance="@style/DialogTextInputError"
+            android:theme="@style/DialogTextInputLabel">
+
+            <EditText
+                android:id="@+id/et_create_card_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="@string/pin_code"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:textColor="@color/gray_dove" />
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_create_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/very_small_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="@string/create_card"
+                style="@style/ButtonMain" />
+
+            <Button
+                android:id="@+id/btn_create_card_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/very_small_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="@string/cancel"
+                style="@style/ButtonSecond"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

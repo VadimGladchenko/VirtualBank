@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/withdraw_card_amount_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/DialogTextInputLabel"
+            app:errorTextAppearance="@style/DialogTextInputError">
+
+            <EditText
+                android:id="@+id/et_withdraw_card_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="14"
+                android:hint="@string/amount_of_withdraw"
+                android:inputType="numberDecimal"
+                android:textColor="@color/gray_dove"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/withdraw_card_pin_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:theme="@style/DialogTextInputLabel"
+            app:errorTextAppearance="@style/DialogTextInputError">
+
+            <EditText
+                android:id="@+id/et_withdraw_card_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="4"
+                android:hint="@string/pin_code"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:textColor="@color/gray_dove"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_withdraw_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/very_small_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="@string/withdraw"
+                style="@style/ButtonMain"/>
+
+            <Button
+                android:id="@+id/btn_withdraw_card_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/very_small_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="@string/cancel"
+                style="@style/ButtonSecond"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
